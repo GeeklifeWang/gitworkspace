@@ -1,41 +1,8 @@
 # -*- coding:UTF-8 -*-
-'''
-import requests
-#链接：http://www.zhihu.com/question/36044851/answer/65629497
-import requests.packages.urllib3.util.ssl_
-requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS = 'ALL'
-r = requests.get('http://www.zhihu.com/question/36044851/answer/65625801')  # 发送请求
-print r.status_code  # 返回码 
-print r.headers['content-type']  # 返回头部信息
-print r.encoding  # 编码信息
-print r.text #内容部分
-'''
-'''
-#爬取页面titile
-from bs4 import BeautifulSoup
-import urllib2
-import sys
-import HTMLParser
-reload(sys)
-sys.setdefaultencoding("utf-8")
-url = 'http://tieba.baidu.com/f?ie=utf-8&kw=snh48&fr=search'
-htmlpage = urllib2.urlopen(url).read()
-soup = BeautifulSoup(htmlpage)
-titles = soup.findAll('a', attrs={'class' : 'j_th_tit' })
-for title in titles:
-        subUrl ='http://tieba.baidu.com/'+title.get('href')
-        subhtmlpage = urllib2.urlopen(subUrl).read()
-        subsoup = BeautifulSoup(subhtmlpage)
-        titles2 = subsoup.findAll('h1', attrs={'class' : 'core_title_txt'})
-        for subtile in titles2:
-           print subtile.get('title')
-'''
-
 import requests
 import threading
 from bs4 import BeautifulSoup
 import re
-
 """
 Description    : 将网页图片保存本地
 @param imgUrl  : 待保存图片URL
@@ -56,13 +23,11 @@ def saveImage( imgUrl,imgName ="default.jpg" ):
         return
     finally:
         jpg.close        
-
 """
 Description    : 开启多线程执行下载任务
 @param filelist:待下载图片URL列表
 @return 无
 """
-
 def downImageViaMutiThread( filelist ):
     task_threads=[]  #存储线程
     count=1
@@ -79,13 +44,11 @@ def downImageViaMutiThread( filelist ):
         task.start()
     for task in task_threads:
         task.join() 
-
 """
 Description    : 获取图片地址
 @param pageUrl : 网页URL
 @return : 图片地址列表
 """
-
 def getfilelist(pageUrl):
     web = requests.get(pageUrl)
     soup = BeautifulSoup(web.text)
