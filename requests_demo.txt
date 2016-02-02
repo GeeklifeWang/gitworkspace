@@ -1,9 +1,0 @@
-import requests
-#链接：http://www.zhihu.com/question/36044851/answer/65629497
-import requests.packages.urllib3.util.ssl_
-requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS = 'ALL'
-r = requests.get('http://www.zhihu.com/question/36044851/answer/65625801')  # 发送请求
-print r.status_code  # 返回码 
-print r.headers['content-type']  # 返回头部信息
-print r.encoding  # 编码信息
-print r.text #内容部分
