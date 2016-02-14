@@ -1,2 +1,1 @@
-first commit.
-2016.1.4
+This is just my personal practice.
