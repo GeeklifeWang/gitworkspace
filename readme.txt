@@ -1,1 +1,1 @@
-This is just my personal practice.
+This is my personal practice only.
