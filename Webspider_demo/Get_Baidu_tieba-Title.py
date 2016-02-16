@@ -1,3 +1,4 @@
+_author = 'wangyouwei'
 #-*- coding:utf-8 -*-
 #爬取页面titile
 from bs4 import BeautifulSoup

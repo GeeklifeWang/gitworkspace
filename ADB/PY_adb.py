@@ -1,3 +1,4 @@
+_author = 'wangyouwei'
 # -*- coding:UTF-8 -*-
 "py调用adb获取moji内存   adb nodaemon server 查adb端口"
 

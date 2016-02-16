@@ -1,3 +1,4 @@
+_author = 'wangyouwei'
 from pyadb.adb import ADB
 import os
 

@@ -1,3 +1,4 @@
+_author = 'wangyouwei'
 #-*- coding:utf-8 -*-
 '''
 splinter和之后的selenium可能因版本差异导致无法调用chromedriver服务，修改
