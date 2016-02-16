@@ -25,8 +25,8 @@ time.sleep(1)
 
 #browser.find_elements_by_name('userName').clear()
 
-browser.find_element_by_name('userName').send_keys('18610046959')
-browser.find_element_by_name('password').send_keys('199308060036')
+browser.find_element_by_name('userName').send_keys('your username')
+browser.find_element_by_name('password').send_keys('your password')
 browser.find_element_by_id('TANGRAM__PSP_8__submit').click()
 
 time.sleep(10)
