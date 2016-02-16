@@ -1,6 +1,7 @@
 # -*- coding:utf8 -*-
 from appium import webdriver
 import time
+import random
 #import os
 #import unittest
 
@@ -20,12 +21,17 @@ def startapp():
 
     driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
 
-    time.sleep(2)
-
-    driver.swipe(540,1200,540,400)
+    #driver.swipe(540,1200,540,400)
 
     driver.find_element_by_name(u"时景").click()
     driver.find_element_by_name(u"我").click()
+    driver.find_element_by_name(u"天气").click()
+
+    for i in range(100):
+        #点击操作
+        driver.tap([(random.randint(10,1000),random.randint(60,1760))],50)
+        print i,'click'
+        time.sleep(1)
 
     #driver.find_element_by_id('id').send_keys('string')
 
