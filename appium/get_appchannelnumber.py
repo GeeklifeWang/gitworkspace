@@ -1,3 +1,4 @@
+_author = 'wangyouwei'
 #-*- coding:utf8 -*-
 
 import os
