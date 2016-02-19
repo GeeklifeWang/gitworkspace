@@ -1,0 +1,5 @@
+Mon Feb 15 11:39:12 2016
+a-test.py fail
+moji-request_appstore.py success
+moji-request_location.py success
+moji-request_weatherdata.py success
