@@ -5,6 +5,7 @@ import os
 import time
 from pyadb.adb import ADB
 from appium import webdriver
+from selenium.webdriver.common.by import By
 
 myadb = ADB('E:\\adt-bundle-windows\\sdk\\platform-tools\\adb')
 
@@ -19,10 +20,11 @@ class mywebdriver(webdriver.Remote):
         super(mywebdriver,self).__init__(mycommand_executor,
         mydesired_capabilities, mybrowser_profile, myproxy, mykeep_alive)
 
-    def find_elements_by_id(self, id_,waittime=1):
+    def find_element_by_id(self, id_,waittime=1):
+
         time.sleep(waittime)
-        print 'wait 2s'
-        return self.find_elements(by=By.ID, value=id_)
+        print 'wait 1s'
+        return self.find_element(by=By.ID, value=id_)
 
 
 
@@ -60,17 +62,17 @@ def test():
     driver.swipe(500,1600,500,400)
     time.sleep(1)
     driver.find_element_by_id('com.moji.mjweather:id/bl_owner_home_pager_setting').click()
-    
+
     driver.swipe(500,1700,500,200)
     time.sleep(2)
     driver.find_element_by_id('com.moji.mjweather:id/rl_about').click()
-    
+
     element = driver.find_element_by_id('com.moji.mjweather:id/about_text_version')
     resultlist.append(element.text)
 
-    
-    driver.reset()
-    #driver.close_app()
+
+    #driver.reset()
+    driver.close_app()
     driver.quit()
     time.sleep(1)
 
