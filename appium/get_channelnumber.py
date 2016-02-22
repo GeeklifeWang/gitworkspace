@@ -27,7 +27,6 @@ class mywebdriver(webdriver.Remote):
         return self.find_element(by=By.ID, value=id_)
 
 
-
 def test():
     desired_caps = {}
     desired_caps['platformName'] = 'Android'
@@ -49,6 +48,10 @@ def test():
     driver.tap([(762,1260)],50)
     time.sleep(3)
 
+    #print 'get picture'
+    #driver.get_screenshot_as_file(r'C:\Users\youwei\Desktop\%s.png' % time.ctime())
+    #time.sleep(1)
+
     #driver.tap([(762,1260)],50)
 
     #driver.swipe(960,1000,100,1000)
@@ -69,7 +72,6 @@ def test():
 
     element = driver.find_element_by_id('com.moji.mjweather:id/about_text_version')
     resultlist.append(element.text)
-
 
     #driver.reset()
     driver.close_app()
