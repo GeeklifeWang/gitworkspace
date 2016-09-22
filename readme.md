@@ -1,1 +1,1 @@
-My personal practice only.
+Personal practice only.
