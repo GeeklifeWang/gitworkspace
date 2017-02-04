@@ -1,16 +1,16 @@
-# -*- coding:utf8 -*-
+#coding:utf-8
 class test_del(object):
-    '''当类的引用计数(num_count)为0时，就会调用解构器  cmd中查看'''
+    '''当程序退出时  python解释器会调用解构器清除实例对象  cmd中查看'''
     num_count = 0
     def __init__(self,name):
         self.__class__.num_count += 1
         self.name=name
-        print 'init is running:',self.__class__.num_count
+        print self.name,':',self.__class__.num_count
     def __del__(self):
-        print 'del running'
-
-A=test_del('1')
-B=test_del('2')
-C=test_del('3')
-
-#del A,B,C
+    	self.__class__.num_count -= 1
+    	print 'del running'
+    	print self.name,':',self.__class__.num_count
+    
+A=test_del('a')
+B=test_del('b')
+C=test_del('c')
