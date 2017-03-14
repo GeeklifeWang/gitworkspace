@@ -1,7 +1,7 @@
 # -*- coding:utf8 -*-
 import os, urllib, re ,traceback
 
-'''Find ini file'''
+# Find ini file
 def resultini(path = r'C:\Program Files (x86)\360\360Safe'):
     result = []
     def recursion(arg = [i for i in os.walk(path)]):
@@ -14,10 +14,9 @@ def resultini(path = r'C:\Program Files (x86)\360\360Safe'):
                 recursion(each)
         return result
     return recursion.__call__()
-#print resultini()
 
 
-'''Find url in 360html'''
+# Find url in 360html
 def reurl(url = r'http://www.360.cn'):
     try:
         response = urllib.urlopen(url)
@@ -37,4 +36,3 @@ def reurl(url = r'http://www.360.cn'):
         for i in l:
             f.write(i + '\n')
         f.close()
-reurl()
