@@ -18,7 +18,11 @@ def main():
         threads.append(t)
 
     for i in nloops:
+        #不要用run,用start启动
+        'start是起一个新的线程执行方法'
         threads[i].start()
+        'run是在当前线程执行方法'
+        #threads[i].run()
 
     for i in nloops:
         threads[i].join()
