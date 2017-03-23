@@ -26,8 +26,14 @@ class Thread_Count(object):
                 else:
                     l = range((i-1)*(100/self.n) + 1, (i-1)*(100/self.n) + 1 + 100/self.n)
                     if i == self.n:
-                        l.extend(range((i-1)*(100/self.n) + 1 + 100/self.n, 101))
+                        last = range((i-1)*(100/self.n) + 1 + 100/self.n, 101)
+                        #l.extend(range((i-1)*(100/self.n) + 1 + 100/self.n, 101))
                 self.number.append(l)
+            for j in self.number:
+                try:
+                    j.append(last.pop())
+                except Exception as e:
+                    break
         return self.number
 
     def thread_do(self):
